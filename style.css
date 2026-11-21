@@ -1,0 +1,38 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #060b19;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            touch-action: none;
+            cursor: pointer;
+            transform-origin: 50% 100%;
+            animation: gentle-scene-sway 9s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes gentle-scene-sway {
+            0%, 100% { transform: translateX(-0.35%) rotate(-0.16deg) scale(1.012); }
+            50% { transform: translateX(0.35%) rotate(0.16deg) scale(1.012); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            canvas {
+                animation: none;
+                transform: none;
+                will-change: auto;
+            }
+        }
